@@ -2,14 +2,16 @@
   "name": "application-name",
   "version": "0.0.1",
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
     "glob": "^7.1.2",
-    "next": "^2.4.3",
+    "next": "^2.4.4",
     "next.js": "^1.0.3",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
