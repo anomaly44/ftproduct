@@ -35,6 +35,7 @@ export default () => (
 }
  h1 {
     font-weight: 200;
+    font-size: 3.8rem;
  }
  p.lead {
      margin: 2rem auto;

@@ -27,7 +27,7 @@ a {
 
 h1 {
   font-family: $headline-font;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 
@@ -117,9 +117,72 @@ p {
   }
 }
 
+// Pricing
+
+.pricing {
+  padding: 3rem 0;
+  h1 {
+    font-size: 3em;
+    margin-bottom: 3rem;
+  }
+  h3 {
+    font-size: 3.5em;
+    color: $primary-color;
+  }
+  .card {
+    background-color: $lighter-gray;
+    margin-bottom: 1em;
+  }
+  .divider {
+    display: block;
+    width: 33%;
+    height: 0.06rem;
+    background-color: $medium-gray;
+    margin: 0.5rem auto;
+  }
+  .ribbon {
+    position: absolute;
+    overflow: hidden;
+    right: -5px; top: -5px;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    text-align: right;
+    span {
+      font-size: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      line-height: 30px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg); /* Needed for Safari */
+      width: 300px;
+      display: block;
+      background: #79A70A;
+      background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+      box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+      position: absolute;
+      top: 70px;
+      right: -60px;
+    }
+  }
+  .flag {
+    position: absolute;
+    right: 0;
+    transform: rotate(45deg) translate(23%, 57%);
+    z-index: 1;
+    background: $primary-color;
+    color: #fff;
+    min-width: 200px;
+    display: block;
+    overflow: hidden;
+  }
+}
+
 a.navbar-brand, a.logo {
   font-family: $headline-font;
-  color: #fff!important;
+  color: #fff !important;
   font-size: 2rem;
   font-weight: bold;
   margin-top: 0;
@@ -143,6 +206,10 @@ a.logo:hover, a.logo:active, a.logo:focus {
   text-decoration: none;
 }
 
+.navbar-custom {
+  background-color: $background-color !important;
+}
+
 .footer-1 {
   background: $background-color;
   min-height: 3rem;
@@ -151,7 +218,7 @@ a.logo:hover, a.logo:active, a.logo:focus {
   padding-top: 1.5rem;
   padding-bottom: .5rem;
   a.navbar-brand {
-    color: #fff!important;
+    color: #fff !important;
   }
   .nav-footer {
     .nav-link {
@@ -188,6 +255,7 @@ a.logo:hover, a.logo:active, a.logo:focus {
     margin-top: .5rem;
   }
 }
+
 @media screen and (max-width: 768px) {
   .nav-footer {
     width: 100%;
