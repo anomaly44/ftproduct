@@ -12,15 +12,19 @@ import {
   Button
 } from 'reactstrap'
 import Link from 'next/link'
-
+import Router from 'next/router'
 import Jumbotron from '../components/Home/Jumbotron'
 import Footer from '../components/Footer'
+import Features from '../components/Features'
 
 import stylesheet from 'styles/index.scss'
 
 const NavLinkHelper = (props) => {
-  console.log(props);
-  return (<Link href={'contact'}><a className={props.className}>{props.children}</a></Link> );
+  return (<Link href={props.to}><a className={props.className}>{props.children}</a></Link> );
+};
+
+Router.onRouteChangeStart = (url) => {
+  console.log(url);
 };
 
 class Home extends Component {
@@ -32,6 +36,14 @@ class Home extends Component {
     this.state = {
       isOpen: false
     };
+  }
+
+  componentDidMount() {
+    function handleHashChange() {
+      console.log('hash changed');
+    }
+    console.log('mounted');
+    window.addEventListener('hashchange', handleHashChange, false);
   }
 
   toggle() {
@@ -49,7 +61,7 @@ class Home extends Component {
                 integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
                 crossOrigin="anonymous"/>
           <script src="https://use.fontawesome.com/33db5f5655.js"/>
-          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+          <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
         </Head>
         <Navbar inverse toggleable color="inverse">
           <NavbarToggler right onClick={this.toggle}/>
@@ -58,10 +70,13 @@ class Home extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink tag={NavLinkHelper} to="/contact">Components</NavLink>
+                  <NavLink tag={NavLinkHelper} to="/">Home</NavLink>
                 </NavItem>
-                <NavItem style={{marginRight: 20}}>
-                  <NavLink >Github</NavLink>
+                <NavItem>
+                  <NavLink tag={NavLinkHelper} to="/#features">Features</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={NavLinkHelper} to="/#footer">Contact</NavLink>
                 </NavItem>
               </Nav>
               <Button outline color="success">Probeer nu</Button>
@@ -69,9 +84,7 @@ class Home extends Component {
           </div>
         </Navbar>
         <Jumbotron />
-        <Container>
-          <div className="lol">lolol</div>
-        </Container>
+        <Features />
         <Footer/>
       </div>
     );

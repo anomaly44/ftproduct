@@ -1,5 +1,5 @@
 export default () => (
-  <footer className="footer-1">
+  <footer className="footer-1" id="footer">
     <div className="container">
       <div className="row">
         <div className="col-md-4 text-center text-md-left">

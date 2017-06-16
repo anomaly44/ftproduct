@@ -12,26 +12,61 @@ $main-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headline-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif-font: 'Droid Serif', Times, Georgia, serif;
 
-a.navbar-brand, a.logo {
+// Global Styles
+
+body {
+  font-family: $main-font;
+  font-size: $base-font-size;
+  background-color: #ffffff;
+  color: $dark-gray;
+}
+
+a {
+  color: $primary-color;
+}
+
+h1 {
   font-family: $headline-font;
-  color: #fff!important;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: $headline-font;
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: $headline-font;
   font-size: 2rem;
-  font-weight: bold;
-  margin-top: 0;
+  font-weight: 500;
 }
 
-a.logo:hover, a.logo:active, a.logo:focus {
-  text-decoration: none;
+h4 {
+  font-family: $headline-font;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-li.nav-item {
-  .btn {
-    margin-top: .2rem;
-    margin-left: .4rem;
-  }
-  .btn-white {
-    color: $dark-gray;
-  }
+p {
+  color: $medium-gray;
+  font-size: .9rem;
+}
+
+.divider {
+  display: block;
+  width: 6rem;
+  height: 0.3rem;
+  background-color: $lighter-gray;
+  margin: 2rem auto;
+}
+
+.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social {
@@ -61,6 +96,47 @@ li.nav-item {
 .social li a:hover {
   color: $primary-color;
   border-color: $primary-color;
+}
+
+// Features
+.features-1 {
+  padding: 3rem 0;
+  h2 {
+    margin-top: 2rem;
+  }
+  .col-feature {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .rounded-circle {
+      margin: 0 auto 2rem;
+      width: 6rem;
+      height: 6rem;
+      background: none;
+      border: .15rem solid $lighter-gray;
+    }
+  }
+}
+
+a.navbar-brand, a.logo {
+  font-family: $headline-font;
+  color: #fff!important;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+a.logo:hover, a.logo:active, a.logo:focus {
+  text-decoration: none;
+}
+
+li.nav-item {
+  .btn {
+    margin-top: .2rem;
+    margin-left: .4rem;
+  }
+  .btn-white {
+    color: $dark-gray;
+  }
 }
 
 a.logo:hover, a.logo:active, a.logo:focus {
