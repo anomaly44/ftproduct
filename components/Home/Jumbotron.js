@@ -3,7 +3,7 @@ export default () => (
     <div className="cover text-center">
       <div className="cover-container pb-5">
         <div className="container cover-inner">
-          <h1 className="jumbotron-heading"><em>Slimmer</em> omgaan met <strong>Reparaties</strong></h1>
+          <h1 className="jumbotron-heading"><em>Slimmer</em> omgaan met <strong>reparaties</strong></h1>
           <p className="lead">Cloud software voor rentmeesters, verhuurders en vastgoedbeheerders.</p>
           <p>
             <a href="#" className="btn btn-success btn-lg mb-2 mr-2 ml-2">Probeer nu</a>

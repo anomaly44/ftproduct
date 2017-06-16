@@ -16,11 +16,12 @@ import Link from 'next/link'
 import Jumbotron from '../components/Home/Jumbotron'
 import Footer from '../components/Footer'
 
+import stylesheet from 'styles/index.scss'
 
 const NavLinkHelper = (props) => {
   console.log(props);
   return (<Link href={'contact'}><a className={props.className}>{props.children}</a></Link> );
-}
+};
 
 class Home extends Component {
 
@@ -46,7 +47,9 @@ class Home extends Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
                 integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-                crossorigin="anonymous"/>
+                crossOrigin="anonymous"/>
+          <script src="https://use.fontawesome.com/33db5f5655.js"/>
+          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         </Head>
         <Navbar inverse toggleable color="inverse">
           <NavbarToggler right onClick={this.toggle}/>
@@ -67,7 +70,7 @@ class Home extends Component {
         </Navbar>
         <Jumbotron />
         <Container>
-          test
+          <div className="lol">lolol</div>
         </Container>
         <Footer/>
       </div>
