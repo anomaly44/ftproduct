@@ -10,8 +10,8 @@ const renderPriceCard = (title, price, features, soon) => (
       <h3 className="price-euro">€ {price}</h3>
       <p className="card-text">per maand, jaarlijks gefactureerd</p>
       <div className="divider" />
-      {features.map(feature => (
-        <p className="card-text">{feature}</p>
+      {features.map((feature, index) => (
+        <p className="card-text" key={index}>{feature}</p>
       ))}
     </div>
   </div>
