@@ -13,7 +13,8 @@
       {
         "extensions": ["css$", "scss$"]
       }
-    ]
+    ],
+    ["transform-define", "./env-config.js"]
   ],
   "presets": [
     "next/babel"
