@@ -39,7 +39,7 @@ export class Pricing extends Component {
   render() {
     return (
       <Layout>
-        <div className="container pricing text-center">
+        <div className="container pricing page text-center">
           <h1>Prijzen op maat</h1>
           <div className="row">
             <div className="col-md-4">

@@ -98,6 +98,15 @@ p {
   border-color: $primary-color;
 }
 
+// Pages
+.page {
+  padding: 3rem 0;
+  h1 {
+    font-size: 3em;
+    margin-bottom: 3rem;
+  }
+}
+
 // Features
 .features-1 {
   padding: 3rem 0;
@@ -120,11 +129,6 @@ p {
 // Pricing
 
 .pricing {
-  padding: 3rem 0;
-  h1 {
-    font-size: 3em;
-    margin-bottom: 3rem;
-  }
   h3 {
     font-size: 3.5em;
     color: $primary-color;
@@ -143,7 +147,7 @@ p {
   .ribbon {
     position: absolute;
     overflow: hidden;
-    right: 0px; top: 0px;
+    right: 0; top: 0;
     z-index: 1;
     width: 200px;
     height: 200px;

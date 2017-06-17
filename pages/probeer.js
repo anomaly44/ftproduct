@@ -8,7 +8,7 @@ class Register extends Component {
   render() {
     return (
       <Layout>
-        <div className="container">
+        <div className="container page">
           <h1>Aan de slag met FixTrack</h1>
         </div>
       </Layout>

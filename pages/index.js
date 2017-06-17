@@ -4,7 +4,6 @@ import Features from '../components/Features'
 
 export default () => (
   <Layout>
-    <p>api url: {API_URL}</p>
     <Jumbotron />
     <Features />
   </Layout>

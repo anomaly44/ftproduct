@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Button
 } from 'reactstrap'
 import Link from 'next/link'
 import Footer from '../components/Footer'
@@ -17,14 +16,18 @@ import Footer from '../components/Footer'
 import stylesheet from 'styles/index.scss'
 
 const NavLinkHelper = (props) => {
-  return (<Link href={props.to}><a className={props.className}>{props.children}</a></Link> );
+  return (<Link href={props.to} prefetch><a className={props.className}>{props.children}</a></Link> );
+};
+
+const NavLinkHelperButton = (props) => {
+  return (<Link href={props.to} prefetch><a className="btn btn-outline-success">{props.children}</a></Link> );
 };
 
 const renderNavItem = (item) => (
   <NavItem key={item.page}>
     <NavLink tag={NavLinkHelper} to={item.page}>{item.name}</NavLink>
   </NavItem>
-)
+);
 
 const navMenuItems = [
   {
@@ -74,8 +77,10 @@ class Layout extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 {navMenuItems.map(renderNavItem)}
+                <NavItem>
+                  <NavLink tag={NavLinkHelperButton} to="/probeer">Probeer nu</NavLink>
+                </NavItem>
               </Nav>
-              <Button outline color="success">Probeer nu</Button>
             </Collapse>
           </div>
         </Navbar>
