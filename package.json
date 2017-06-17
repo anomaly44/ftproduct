@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
+    "start-noport": "next start",
     "heroku-postbuild": "next build"
   },
   "dependencies": {
@@ -13,9 +14,8 @@
     "babel-plugin-wrap-in-js": "^1.1.1",
     "glob": "^7.1.2",
     "immutable": "^3.8.1",
-    "next": "^2.4.4",
+    "next": "^3.0.0-beta16",
     "next-redux-wrapper": "^1.1.2",
-    "next.js": "^1.0.3",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "postcss-easy-import": "^2.1.0",
