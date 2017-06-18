@@ -58,5 +58,5 @@ export function* requestSaga(method, url, data) {
 
   if (data) options.body = JSON.stringify(data);
 
-  return yield call(request, `${API_URL}${url}`, options);
+  return yield call(request, url, options);
 }

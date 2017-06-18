@@ -4,7 +4,7 @@ import { registrationDataSubmitted, submitRegistrationDataError} from './reducer
 import { requestSaga } from '../../utils/request'
 
 export function* submitRegistrationData(action) {
-  const requestUrl = '/registerAgency';
+  const requestUrl = '/api/registerAgency';
   try {
     const data = yield requestSaga('POST', requestUrl);
     yield put(registrationDataSubmitted(data));
