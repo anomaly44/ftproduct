@@ -22,7 +22,7 @@ const handle = app.getRequestHandler();
 app.prepare()
   .then(() => {
     const server = express();
-    server.set('port', (process.env.PORT || 3000));
+    server.set('port', config.port);
 
     server.use('/api', (req, res) => {
       proxy.web(req, res);
