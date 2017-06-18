@@ -4,6 +4,48 @@ const RegisterForm1 = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
+      <fieldset className="form-group">
+        <legend>Activiteit</legend>
+        <div className="form-check">
+          <label className="form-check-label">
+            <Field name="type" component="input" type="radio" value="0" />
+            &nbsp;Verhuurder / rentmeester
+          </label>
+        </div>
+        <div className="form-check">
+          <label className="form-check-label">
+            <Field name="type" component="input" type="radio" value="1" />
+            &nbsp;Syndicus
+          </label>
+        </div>
+        <div className="form-check">
+          <label className="form-check-label">
+            <Field name="type" component="input" type="radio" value="2" />
+            &nbsp;Beide (Zowel verantwoordelijk voor gemeenschappelijke als privatieve delen)
+          </label>
+        </div>
+      </fieldset>
+      <fieldset className="form-group">
+        <legend>Versie</legend>
+        <div className="form-check">
+          <label className="form-check-label">
+            <Field name="version" component="input" type="radio" value="1" />
+              &nbsp;Express
+          </label>
+        </div>
+        <div className="form-check">
+          <label className="form-check-label">
+            <Field name="version" component="input" type="radio" value="2"/>
+            &nbsp;Plus
+          </label>
+        </div>
+        <div className="form-check disabled">
+          <label className="form-check-label">
+            <Field name="version" component="input" type="radio" value="3" disabled />
+            &nbsp;Pro ( Coming soon )
+          </label>
+        </div>
+      </fieldset>
       <div className="form-group">
         <label>E-mailadres</label>
         <Field
@@ -29,11 +71,12 @@ const RegisterForm1 = props => {
         type="submit"
         disabled={pristine || submitting}
         className="btn btn-primary"
-      >Submit</button>
+      >Submit
+      </button>
     </form>
   );
-};
+  };
 
-export default reduxForm({
-  form: 'RegisterForm1'
-})(RegisterForm1)
+  export default reduxForm({
+    form: 'RegisterForm1'
+  })(RegisterForm1)

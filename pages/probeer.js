@@ -16,7 +16,10 @@ class Register extends Component {
       <Layout>
         <div className="container page">
           <h1>Aan de slag met FixTrack</h1>
-          <RegisterForm1 onSubmit={this.handleSubmitRegistration} />
+          <RegisterForm1
+            onSubmit={this.handleSubmitRegistration}
+            initialValues={{ version: "2", type: "0" }}
+          />
         </div>
       </Layout>
     );
