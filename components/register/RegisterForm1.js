@@ -1,23 +1,29 @@
 import { Field, reduxForm } from 'redux-form/immutable'
-import { maxLength, required, email } from '../../utils/validation'
+import { maxLength, minLength, required, email } from '../../utils/validation'
 
 const normalizeSubdomain = value => {
   if (!value) {
     return value
   }
-
-  return value.toLowerCase();
+  // filter out unallowed chars
+  const filtered = value.replace(/[^a-zA-Z0-9-]/, '');
+  return filtered.toLowerCase();
 };
 
-const renderInput = ({ type, label, placeholder, meta: { touched, error }, ...custom }) => {
+const renderInput = ({ input, label, meta: { touched, error }, helpText, prefix, suffix, ...custom }) => {
   const showError = touched && error;
   const errorStringInput = showError ? 'form-control-danger' : '';
   const errorStringGroup = showError ? 'has-danger' : '';
   return (
     <div className={`form-group ${errorStringGroup}`}>
       <label className="form-control-label">{label}</label>
-      <input type={type} className={`form-control ${errorStringInput}`} />
+      <div className="input-group">
+        {prefix && <span className="input-group-addon" id="http-addon">https://</span>}
+        <input {...input} className={`form-control ${errorStringInput}`} {...custom}/>
+        {suffix && <span className="input-group-addon" id="http-addon">.fixtrack.be</span>}
+      </div>
       {showError && <div className="form-control-feedback">{error}</div>}
+      {helpText && <small id="emailHelp" className="form-text text-muted">Minimum 6 karakters.</small>}
     </div>
   )
 };
@@ -68,22 +74,19 @@ const RegisterForm1 = props => {
           </label>
         </div>
       </fieldset>
-      <div className="form-group">
-        <label>Webadres van uw FixTrack platform</label>
-        <div className="row">
-          <div className="input-group col-md-6 col-lg-5">
-            <span className="input-group-addon" id="http-addon">https://</span>
-            <Field
-              name="subdomain"
-              component="input"
-              type="text"
-              placeholder="uwkantoornaam"
-              className="form-control"
-              validate={[maxLength(50), required]}
-              normalize={normalizeSubdomain}
-            />
-            <span className="input-group-addon" id="http-addon">.fixtrack.be</span>
-          </div>
+      <div className="row">
+        <div className="col-md-8 col-lg-5">
+          <Field
+            name="subdomain"
+            component={renderInput}
+            type="text"
+            label="Webadres van uw FixTrack platform"
+            placeholder="uwkantoornaam"
+            validate={[minLength(3), maxLength(50), required]}
+            normalize={normalizeSubdomain}
+            prefix="https://"
+            suffix=".fixtrack.be"
+          />
         </div>
       </div>
       <Field
@@ -92,20 +95,17 @@ const RegisterForm1 = props => {
         type="text"
         label="E-mailadres"
         placeholder="E-mailadres"
-        className="form-control"
         validate={[required, email]}
       />
-      <div className="form-group">
-        <label>Wachtwoord</label>
-        <Field
-          name="password"
-          component="input"
-          type="password"
-          placeholder="Wachtwoord"
-          className="form-control"
-        />
-        <small id="emailHelp" className="form-text text-muted">Minimum 6 karakters.</small>
-      </div>
+      <Field
+        name="password"
+        component={renderInput}
+        type="password"
+        label="Wachtwoord"
+        placeholder="Wachtwoord"
+        validate={[required, minLength(6)]}
+        helpText="Minimum 6 karakters."
+      />
       <button
         type="submit"
         disabled={pristine || submitting}

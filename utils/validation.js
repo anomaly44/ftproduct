@@ -1,6 +1,6 @@
 const isEmpty = value => value === undefined || value === null || value === '';
 
-export const required = value => (isEmpty(value)) ? 'Required' : undefined;
+export const required = value => (isEmpty(value)) ? 'Verplicht' : undefined;
 export const maxLength = max => value =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined;
 export const minLength = min => value =>
