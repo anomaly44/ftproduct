@@ -37,6 +37,10 @@ const navMenuItems = [
   {
     name: 'Prijzen',
     page: 'prijzen'
+  },
+  {
+    name: 'Contact',
+    page: 'contact'
   }
 ];
 

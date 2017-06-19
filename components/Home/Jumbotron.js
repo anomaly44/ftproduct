@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default () => (
   <div>
     <div className="cover text-center">
@@ -6,8 +8,7 @@ export default () => (
           <h1 className="jumbotron-heading"><em>Slimmer</em> omgaan met <strong>reparaties</strong></h1>
           <p className="lead">Cloud software voor rentmeesters, verhuurders en vastgoedbeheerders.</p>
           <p>
-            <a href="#" className="btn btn-success btn-lg mb-2 mr-2 ml-2">Probeer gratis</a>
-            <a href="#" className="btn btn-outline-success btn-lg mb-2 ml-2 ml-2">Boek een demo</a>
+            <Link href="/probeer"><a className="btn btn-success btn-lg mb-2 mr-2 ml-2">Probeer FixTrack gratis</a></Link>
           </p>
         </div>
       </div>

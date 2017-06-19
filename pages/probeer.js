@@ -14,8 +14,6 @@ class Register extends Component {
   handleSubmitRegistration = (data) => {
     return new Promise((resolve, reject) => {
       this.props.submitRegistrationData(data, resolve, reject);
-    }).catch(err => {
-      throw new SubmissionError(err)
     });
   };
 
