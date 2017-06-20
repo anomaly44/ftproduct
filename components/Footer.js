@@ -1,4 +1,12 @@
-export default () => (
+import Link from 'next/link'
+
+const renderNavMenuItems = item => (
+  <li className="nav-item" key={item.page}>
+    <Link href={item.page}><a className="nav-link">{item.name}</a></Link>
+  </li>
+);
+
+export default ({ navMenuItems }) => (
   <footer className="footer-1" id="footer">
     <div className="container">
       <div className="row">
@@ -7,17 +15,9 @@ export default () => (
         </div>
         <div className="col-md-8">
           <ul className="nav-footer mt-2 mt-md-0 ">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li>
+            {navMenuItems.map(renderNavMenuItems)}
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Our Work</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <Link href="/probeer"><a className="nav-link">Probeer nu</a></Link>
             </li>
           </ul>
         </div>

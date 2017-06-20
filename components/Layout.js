@@ -89,7 +89,7 @@ class Layout extends Component {
           </div>
         </Navbar>
         {children}
-        <Footer/>
+        <Footer navMenuItems={navMenuItems} />
       </div>
     );
   }
