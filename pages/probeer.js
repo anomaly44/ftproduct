@@ -7,11 +7,12 @@ import RegisterForm1 from '../components/register/RegisterForm1'
 import RegisterForm2 from '../components/register/RegisterForm2'
 import { storeStep1, submitRegistrationData } from '../components/register/reducer'
 import { selectSubmitting, selectSubmitted, selectStep } from '../components/register/selectors'
-import { SubmissionError } from 'redux-form'
+import { trackCustomEvent } from '../utils/analytics'
 
 class Register extends Component {
 
   handleSubmitRegistration = (data) => {
+    trackCustomEvent('trial', 'trial started');
     return new Promise((resolve, reject) => {
       this.props.submitRegistrationData(data, resolve, reject);
     });

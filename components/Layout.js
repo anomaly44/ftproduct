@@ -11,6 +11,7 @@ import {
 } from 'reactstrap'
 import Link from 'next/link'
 import Footer from '../components/Footer'
+import { initGA, logPageView } from '../utils/analytics'
 
 
 import stylesheet from 'styles/index.scss'
@@ -56,6 +57,14 @@ class Layout extends Component {
     };
   }
 
+  componentDidMount() {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
+  }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -89,7 +98,7 @@ class Layout extends Component {
           </div>
         </Navbar>
         {children}
-        <Footer navMenuItems={navMenuItems} />
+        <Footer navMenuItems={navMenuItems}/>
       </div>
     );
   }

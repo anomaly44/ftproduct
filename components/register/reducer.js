@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable';
+import { trackCustomEvent } from '../../utils/analytics'
 
 import {
   SUBMIT_REGISTRATION_DATA,
@@ -77,6 +78,7 @@ export function submitRegistrationDataError(error) {
 }
 
 export function storeStep1(data) {
+  trackCustomEvent('trial', 'Step 1 submitted');
   return {
     type: STORE_STEP1,
     data,
