@@ -82,6 +82,8 @@ class Layout extends Component {
           }
         },
         "theme": "classic",
+        "position": "top",
+        "static": true,
         "content": {
           "message": "Wij gebruiken cookies om het gebruik van deze website te vergemakkelijken.",
           "dismiss": "Ok!",
