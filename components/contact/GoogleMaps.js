@@ -2,7 +2,6 @@ import GoogleMap from 'google-map-react';
 import config from '../../config'
 
 const coordinates = { lat: 50.922367, lng: 5.372040 };
-const MARKER_SIZE = 40;
 
 const renderMarkers = ({map, maps}) =>  {
    let marker = new maps.Marker({
@@ -11,12 +10,6 @@ const renderMarkers = ({map, maps}) =>  {
     title: 'FixTrack'
   });
 };
-
-const renderMarker = test => {
-  console.log(test);
-  return <div>test</div>;
-};
-
 
 export default () => (
   <div style={{ height: 350, width: '100%' }}>
@@ -27,7 +20,6 @@ export default () => (
       onGoogleApiLoaded={renderMarkers}
       yesIWantToUseGoogleMapApiInternals
     >
-      {renderMarker()}
     </GoogleMap>
   </div>
 );
