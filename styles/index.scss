@@ -8,8 +8,8 @@ $light-gray: #a0a0a0;
 $medium-gray: #696b6e;
 $dark-gray: #46484a;
 $base-font-size: 16px;
-$main-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headline-font: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$main-font: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headline-font: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif-font: 'Droid Serif', Times, Georgia, serif;
 
 // Global Styles
@@ -27,7 +27,7 @@ a {
 
 h1 {
   font-family: $headline-font;
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -181,6 +181,35 @@ p {
     min-width: 200px;
     display: block;
     overflow: hidden;
+  }
+}
+
+.cover {
+  background: url(/static/images/city.jpg) center;
+  background-size: cover;
+  min-height: 25rem;
+  height: auto;
+  border-radius: 0;
+  width: 100%;
+  color: #fff;
+  padding-top: 1rem;
+  .cover-container {
+    display: table;
+    height: 100%;
+    min-height: 30rem;
+    margin: 0 auto;
+  }
+  .cover-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  h1 {
+    font-weight: 200;
+    font-size: 3.8rem;
+  }
+  p.lead {
+    margin: 2rem auto;
+    color: #fff;
   }
 }
 

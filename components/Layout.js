@@ -112,6 +112,7 @@ class Layout extends Component {
                 crossOrigin="anonymous"/>
           <script src="https://use.fontawesome.com/33db5f5655.js"/>
           <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
           <link rel="shortcut icon" href="/static/favicon.ico"/>
           <link rel="stylesheet" type="text/css"
                 href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
