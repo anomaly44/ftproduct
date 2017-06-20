@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import ContactForm from '../components/contact/ContactForm'
 import { submitMessage } from '../components/contact/reducer'
 import { selectSubmitted } from '../components/contact/selectors'
+import GoogleMaps from '../components/contact/GoogleMaps'
 
 class Contact extends Component {
 
@@ -46,8 +47,8 @@ class Contact extends Component {
               </ul>
             </div>
           </div>
-
         </div>
+        <GoogleMaps />
       </Layout>
     );
   }

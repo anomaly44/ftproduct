@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Layout from '../components/Layout'
+import Link from 'next/link'
 
 const renderPriceCard = (title, price, features, soon) => (
   <div className="card text-center">
@@ -52,6 +53,7 @@ export class Pricing extends Component {
               {renderPriceCard('Pro', '70', proFeatures, true)}
             </div>
           </div>
+          <Link href="/probeer"><a className="btn btn-success btn-lg mb-2 mr-2 ml-2">Probeer nu 2 weken gratis</a></Link>
         </div>
       </Layout>
     )
