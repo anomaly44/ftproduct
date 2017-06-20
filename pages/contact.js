@@ -20,7 +20,13 @@ class Contact extends Component {
   render() {
     const { submitted } = this.props;
     return (
-      <Layout>
+      <Layout
+        title="Contacteer ons"
+        meta={[
+          { name: 'description', content: 'Heb je vragen of opmerkingen? Aarzel dan niet om ons ' +
+          'te contacteren, wij helpen u graag verder.' },
+        ]}
+      >
         <div className="container contact page">
           <h1>Contacteer ons</h1>
           <div className="row">

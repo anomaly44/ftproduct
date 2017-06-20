@@ -39,7 +39,13 @@ export class Pricing extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        title="Prijzen cloud software"
+        meta={[
+          { name: 'description', content: 'U FixTrack al voor u laten werken vanaf € 35 / maand. ' +
+          'Groot of klein, contacteer ons voor een offerte op maat.' },
+        ]}
+      >
         <div className="container pricing page text-center">
           <h1>Prijzen op maat</h1>
           <div className="row">

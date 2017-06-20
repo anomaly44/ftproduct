@@ -22,7 +22,13 @@ class Register extends Component {
     const {step, submitted, submitting, storeStep1 } = this.props;
 
     return (
-      <Layout>
+      <Layout
+        title="Probeer Fixtrack gratis"
+        meta={[
+            { name: 'description', content: 'U kan FixTrack nu 14 dagen lang gratis testen. ' +
+            'Registreer u hier en ontvang onmiddelijk uw persoonlijke FixTrack website, geen installatie nodig.' },
+          ]}
+      >
         <div className="container page">
           <h1>Aan de slag met FixTrack</h1>
           {submitted ? (<div className="alert alert-success" role="alert">

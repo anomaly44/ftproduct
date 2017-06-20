@@ -12,9 +12,12 @@ import {
 import Link from 'next/link'
 import Footer from '../components/Footer'
 import { initGA, logPageView } from '../utils/analytics'
-
-
 import stylesheet from 'styles/index.scss'
+
+const keywords = 'Software, Reparaties, reparatie, syndicus, syndici, syndic, immo,' +
+  ' vastgoed,' +
+  ' rentmeester, rentmeesters, problemen, oplossingen, eigendombeheer, cloud, webplatform, ' +
+  'webapplicatie, meldingen, huurders, bewoners, app';
 
 const NavLinkHelper = (props) => {
   return (<Link href={props.to} prefetch><a className={props.className}>{props.children}</a></Link> );
@@ -45,6 +48,9 @@ const navMenuItems = [
   }
 ];
 
+const renderMetaTags = (tag, index) => (
+  <meta {...tag} key={index} />
+);
 
 class Layout extends Component {
 
@@ -62,7 +68,27 @@ class Layout extends Component {
       initGA();
       window.GA_INITIALIZED = true
     }
-    logPageView()
+    logPageView();
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#efefef",
+            "text": "#404040"
+          },
+          "button": {
+            "background": "#5CB85C",
+            "text": "#ffffff"
+          }
+        },
+        "theme": "classic",
+        "content": {
+          "message": "Wij gebruiken cookies om het gebruik van deze website te vergemakkelijken.",
+          "dismiss": "Ok!",
+          "link": "Meer info"
+        }
+      })
+    });
   }
 
   toggle() {
@@ -72,16 +98,22 @@ class Layout extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, title, meta } = this.props;
     return (<div className="page-container">
         <Head>
-          <title>FixTrack</title>
+          <title>{title || 'FixTrack'}</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width, shrink-to-fit=no"/>
+          <meta name="keywords" content={keywords}/>
+          {meta && meta.map(renderMetaTags)}
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
                 integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
                 crossOrigin="anonymous"/>
           <script src="https://use.fontawesome.com/33db5f5655.js"/>
           <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
+          <link rel="shortcut icon" href="/static/favicon.ico"/>
+          <link rel="stylesheet" type="text/css"
+                href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"/>
         </Head>
         <Navbar className="navbar-custom" inverse toggleable color="inverse">
           <NavbarToggler right onClick={this.toggle}/>
