@@ -10,7 +10,7 @@ export default () => (
 							<em className="fa fa-2x fa-phone"/>
 						</div>
 						<h4>Minder problemen</h4>
-						<p>FixTrack biedt huurders automatisch oplossingen aan voor simpele problemen en wijst hun op hun
+						<p>FixTrack biedt huurders automatisch oplossingen aan voor simpele problemen en wijst hen op hun
             eigen verantwoordelijkheden. Geen telefoons meer voor gesprongen zekeringen of een verwarmingsketel
             die gewoon niet aan staat.</p>
 					</div>
