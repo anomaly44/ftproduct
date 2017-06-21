@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import Jumbotron from '../components/Home/Jumbotron'
-import Features from '../components/Features'
+import Features from '../components/Home/Features'
 import PhoneDisplay from '../components/Home/PhoneDisplay'
 
 export default () => (

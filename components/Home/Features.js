@@ -27,8 +27,8 @@ export default () => (
 							<em className="fa fa-2x fa-clock-o"/>
 						</div>
 						<h4>24/7/365</h4>
-						<p>Uw FixTrack systeem is dag en nacht bereikbaar. Uw bewoners kunnen er altijd terecht&nbsp;
-              voor oplossingen of om problemen te melden en krijgen direct feedback.&nbsp;
+						<p>Uw FixTrack systeem is dag en nacht bereikbaar. Uw bewoners kunnen er altijd terecht
+							voor oplossingen of om problemen te melden en krijgen direct feedback.&nbsp;
               Dat is pas service.</p>
 					</div>
 				</div>
@@ -49,7 +49,7 @@ export default () => (
 						<h4>Gebruiksvriendelijk</h4>
 						<p>Dankzij ons responsive design kunnen bewoners via eender welk toestel met
 							internettoegang een probleem melden. Of het nu een smartphone, tablet of laptop is,
-							en dit in 4 verschillende talen.</p>
+							én dit in 4 verschillende talen.</p>
 					</div>
 					<div className="col-md-4 col-feature">
 						<div className="rounded-circle justify-center">
