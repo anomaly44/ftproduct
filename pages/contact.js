@@ -45,7 +45,7 @@ class Contact extends Component {
               <h4 className="pt-2">Telefoon</h4>
               <p>+32 474 906 221</p>
               <h4 className="pt-2">Adres</h4>
-              <p>Pietelbeekstraat 19 bus 1.2<br />
+              <p>Oeverstraat 7 bus 1.03<br />
                 3500 Hasselt</p>
               <ul className="social">
                 <li><a href="https://www.facebook.com/fixtrack" title="Facebook" className="fa fa-facebook"/></li>
